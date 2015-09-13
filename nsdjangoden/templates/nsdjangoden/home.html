@@ -1,0 +1,32 @@
+{% extends "bs_base.html" %}
+
+{% block content %}
+    <div class="jumbotron">
+        <h1>Home</h1>
+        <p class="lead">
+            Check out examples here (if I want to tie in more examples
+            this will eventually be a dynamic page tied in w/ the admin)
+        </p>
+    </div>
+
+    <div class="row marketing">
+
+        <div class="col-lg-6">
+            <h4>First-Lady-Swap Game</a> </h4>
+            <p>A historically far-fetched survey/game demo</p>
+            <p>
+                <a class="btn btn-lg btn-success" href="/firstladyswap/" role="button">See More</a>
+                <a class="btn btn-lg btn-success" href="/firstladyswap/1/voting/" role="button">Play Now</a>
+            </p>
+
+        </div>
+        <br>
+        <div class="col-lg-6">
+            <h4>Polls App (official tutorial - no Bootstrap)</a> </h4>
+            <p>Based on the official Django 1.8 tutorial. Striking visual comparison, as this app uses very plain html templates</p>
+            <p><a class="btn btn-lg btn-success" href="/polls/" role="button">View Now</a></p>
+
+        </div>
+    </div>
+
+{% endblock %}

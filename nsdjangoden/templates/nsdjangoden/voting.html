@@ -1,0 +1,45 @@
+{% extends "bs_base.html" %}
+
+
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>{{ pres_name }}</h1>
+    <p class="lead">Which First Lady would have looked best with {{ pres_name }}?</p>
+    <img src="/{{ presimg }}" alt="{{ pres_name }}" height="280">
+</div>
+
+<div class="row marketing">
+    <form action="vote" method="post">
+    {% csrf_token %}
+    {% for fl in first_lady_set %}
+    <div class="col-lg-6">
+        <input type="radio" name="choice" id="choice{{ fl.id }}" value="{{ fl.id }}" >
+        <label for="choice{{ fl.id }}">
+            <img src='/static/firstladyswap/img/{{ fl.image }}' height=260 >
+        </label>
+    </div>
+    {% endfor %}
+    <input type="submit" value="Place Vote" class="btn btn-lg btn-success">
+    </form>
+</div>
+
+{% endblock %}
+
+
+
+<h1>Which First Lady would have looked best with {{ pres_name }}?</h1>
+<img src="/{{ presimg }}" alt="{{ pres_name }}" height=300 />
+<br>
+<h2>First Lady Choices - Pick Your Favorite Match: </h2>
+<form action="vote" method='post'>
+{% csrf_token %}
+{% for fl in first_lady_set %}
+  <input type="radio" name="choice" id="choice{{ fl.id }}" value="{{ fl.id }}" />
+  <label for="choice{{ fl.id }}">{{ fl.lady_name }}
+      <img src='/static/firstladyswap/img/{{ fl.image }}' height=260 />
+  </label><br />
+  {% endfor %}
+<input type="submit" value="Place Vote" />
+</form>

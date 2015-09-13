@@ -1,0 +1,62 @@
+0{% extends "bs_base.html" %}
+
+
+
+{% block content %}
+
+<div class="jumbotron">
+    <h1>Results: {{ pres.pres_name }}</h1>
+    <p class="lead">
+        In real life, {{ pres.pres_name }} had {{ pres.realfirstlady }} as his First Lady <br>
+        <img src="/{{pres.presimg}}", height="220">
+        <img src="/static/firstladyswap/img/{{ flimg }}", height="220">
+    </p>
+
+    {% if prev_pres %}
+    <a class="btn btn-lg btn-success" href="/firstladyswap/results/{{ prev_pres.id }}/" role="button">
+        <-- {{ prev_pres.pres_name }}
+    </a>
+    {% endif %}
+    <a class="btn btn-lg btn-success" href="/firstladyswap/results/" role="button">
+        Back
+    </a>
+    {% if next_pres %}
+    <a class="b tn btn-lg btn-success" href="/firstladyswap/results/{{ next_pres.id }}/" role="button">
+        {{ next_pres.pres_name }} -->
+    </a>
+    {% endif %}
+</div>
+
+<div class="row marketing">
+    {% for lady in first_lady_list %}
+    <div class="col-lg-6">
+        <h4>{{ lady.lady_name }}</h4>
+        <p>{{ lady.lady_name }} has recieved {{ lady.votes }} votes to be First Lady with {{ pres.pres_name }}!
+        </p>
+        <img src="/static/firstladyswap/img/{{ lady.image }}", height=245>
+        <img src="/{{ pres.presimg }}", alt="{{ pres.pres_name }}", height=245>
+    </div>
+    {% endfor %}
+</div>
+
+<br><br>
+
+<div class="jumbotron">
+    {% if prev_pres %}
+    <a class="btn btn-lg btn-success" href="/firstladyswap/results/{{ prev_pres.id }}/" role="button">
+        <-- {{ prev_pres.pres_name }}
+    </a>
+    {% endif %}
+    <a class="btn btn-lg btn-success" href="/firstladyswap/results/" role="button">
+        Back
+    </a>
+    {% if next_pres %}
+    <a class="btn btn-lg btn-success" href="/firstladyswap/results/{{ next_pres.id }}/" role="button">
+        {{ next_pres.pres_name }} -->
+    </a>
+    {% endif %}
+</div>
+
+
+{% endblock %}
+
