@@ -8,8 +8,8 @@
     <h1>Results: {{ pres.pres_name }}</h1>
     <p class="lead">
         In real life, {{ pres.pres_name }} had {{ pres.realfirstlady }} as his First Lady <br>
-        <img src="/{{pres.presimg}}", height="220">
-        <img src="/static/firstladyswap/img/{{ flimg }}", height="220">
+        <img src="/static/nsdjangoden/img/{{pres.presimg}}", height="220">
+        <img src="/static/nsdjangoden/img/{{ flimg }}", height="220">
     </p>
 
     {% if prev_pres %}
@@ -21,7 +21,7 @@
         Back
     </a>
     {% if next_pres %}
-    <a class="b tn btn-lg btn-success" href="/firstladyswap/results/{{ next_pres.id }}/" role="button">
+    <a class="btn btn-lg btn-success" href="/firstladyswap/results/{{ next_pres.id }}/" role="button">
         {{ next_pres.pres_name }} -->
     </a>
     {% endif %}
@@ -33,8 +33,8 @@
         <h4>{{ lady.lady_name }}</h4>
         <p>{{ lady.lady_name }} has recieved {{ lady.votes }} votes to be First Lady with {{ pres.pres_name }}!
         </p>
-        <img src="/static/firstladyswap/img/{{ lady.image }}", height=245>
-        <img src="/{{ pres.presimg }}", alt="{{ pres.pres_name }}", height=245>
+        <img src="/static/nsdjangoden/img/{{ lady.image }}", height=245>
+        <img src="/static/nsdjangoden/img/{{ pres.presimg }}", alt="{{ pres.pres_name }}", height=245>
     </div>
     {% endfor %}
 </div>

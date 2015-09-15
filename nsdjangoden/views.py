@@ -49,14 +49,14 @@ def detail(request, pres_id):
                'presimg':pres.presimg,
                'realfirstlady':pres.realfirstlady,
                }
-    return render(request, 'firstladyswap/detail.html', context)
+    return render(request, 'nsdjangoden/detail.html', context)
 
 
 def all_results(request):
     pres_list = [i for i in President.objects.all()]
     context = {'pres_list':pres_list,
                }
-    return render(request, 'firstladyswap/allresults.html', context)
+    return render(request, 'nsdjangoden/allresults.html', context)
 
 def results(request, pres_id):
     p = [i for i in President.objects.all() if int(i.id) == int(pres_id)][0]
@@ -81,6 +81,6 @@ def results(request, pres_id):
                'prev_pres':prev_pres,
                'next_pres':next_pres,
                }
-    return render(request, 'firstladyswap/results.html', context)
+    return render(request, 'nsdjangoden/results.html', context)
 
 #    return render(request, 'templates/index.html')
