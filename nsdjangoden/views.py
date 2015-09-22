@@ -59,10 +59,14 @@ def all_results(request):
     return render(request, 'nsdjangoden/allresults.html', context)
 
 def results(request, pres_id):
-    p = [i for i in President.objects.all() if int(i.id) == int(pres_id)][0]
+    p = get_object_or_404(President, id=pres_id)
+    # p = [i for i in President.objects.all() if int(i.id) == int(pres_id)][0]
     fl = [i for i in p.firstlady_set.all()]
-    l = [i for i in FirstLady.objects.filter(lady_name=p.realfirstlady)]
-    flimg = l[0].image
+
+    firstlady = FirstLady.objects.filter(lady_name=p.realfirstlady).first()
+    flimg = firstlady.image
+    # l = [i for i in FirstLady.objects.filter(lady_name=p.realfirstlady)]
+    # flimg = l[0].image
     fl = sorted(fl, reverse=True, key=lambda x: int(x.votes))
 
     prev_pres, next_pres = None, None
