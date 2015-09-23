@@ -1,7 +1,8 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse, HttpResponseRedirect
+from django.utils.text import slugify
 
-from .models import FirstLady, President
+from .models import FirstLady, President, RecipePost
 
 
 def home(request):
@@ -86,5 +87,41 @@ def results(request, pres_id):
                'next_pres':next_pres,
                }
     return render(request, 'nsdjangoden/results.html', context)
+
+def recipeindex(request):
+    if request.method == 'POST':
+        try:
+            title = request.POST['title']
+            dup = RecipePost.objects.filter(title=title)
+            if dup:
+                title += '(2)'
+
+            rp = RecipePost(title=title,
+                            urltitle = slugify(title),
+                            ingredients=request.POST['ingredients'],
+                            instructions=request.POST['instructions'],
+                            )
+            rp.save()
+            return HttpResponseRedirect('/postrecipes/')
+        except KeyError:
+            context = {'recipes':RecipePost.objects.all(),
+                       'warnings':'recipe error. please make sure you filled it in.'}
+            return render(request, 'nsdjangoden/recipeindex.html', context)
+    elif request.method == 'GET':
+        recipes = [i for i in RecipePost.objects.all()]
+        recipes = sorted(recipes, key=lambda x: x.title)
+        context = {"recipes":recipes,
+                   "warnings":None,
+                   }
+        return render(request, 'nsdjangoden/recipeindex.html', context)
+
+def recipedetail(request, urltitle):
+    recipe = get_object_or_404(RecipePost, urltitle=urltitle)
+    context = {'recipe':recipe,
+               }
+    return render(request, 'nsdjangoden/recipedetail.html', context)
+
+
+
 
 #    return render(request, 'templates/index.html')

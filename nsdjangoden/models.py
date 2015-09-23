@@ -17,3 +17,22 @@ class FirstLady(models.Model):
 
     def __str__(self):
         return str(self.lady_name)
+
+class RecipePost(models.Model):
+    title = models.CharField(max_length=40)
+    urltitle = models.CharField(max_length=40)
+    upvotes = models.IntegerField(default=1)
+    downvotes = models.IntegerField(default=0)
+    ingredients = models.CharField(max_length=200)
+    instructions = models.CharField(max_length=300)
+
+    def __str__(self):
+        return str("Recipe Title: " + str(self.title))
+
+
+class RecipeComment(models.Model):
+    recipe = models.ForeignKey(RecipePost)
+    text = models.CharField(max_length=200)
+
+    def __str__(self):
+        return "comment on " + str(self.recipe)

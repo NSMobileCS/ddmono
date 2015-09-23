@@ -13,4 +13,6 @@ urlpatterns = [
     url(r'^firstladyswap/(?P<pres_id>[0-9]+)/voting/vote/?$', views.vote, name='flvote'),
     url(r'^firstladyswap/results/?$', views.all_results, name='flallresults'),
     url(r'^firstladyswap/results/(?P<pres_id>[0-9]+)/?$', views.results, name='flresults'),
+    url(r'^postrecipes/?$', views.recipeindex, name='recipeindex'),
+    url(r'^postrecipes/(?P<urltitle>[-\w]+)/?$', views.recipedetail, name='recipedetail'),
 ]
