@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="jumbotron">
+<div class="dispbox">
     <h1>{{ pres_name }}</h1>
     <p class="lead">Which First Lady would have looked best with {{ pres_name }}?</p>
     <img src="/static/nsdjangoden/img/{{ presimg }}" alt="{{ pres_name }}" height="280">
@@ -14,14 +14,14 @@
     <form action="vote" method="post">
     {% csrf_token %}
     {% for fl in first_lady_set %}
-    <div class="col-lg-6">
+    <div class="dispbox col-xs-8 col-lg-4">
         <input type="radio" name="choice" id="choice{{ fl.id }}" value="{{ fl.id }}" >
         <label for="choice{{ fl.id }}">
             <img src='/static/nsdjangoden/img/{{ fl.image }}' height=260 >
         </label>
     </div>
     {% endfor %}
-    <input type="submit" value="Place Vote" class="btn btn-lg btn-success">
+    <input type="submit" value="Place Vote" class="btn btn-lg btn-primary">
     </form>
 </div>
 

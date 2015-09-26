@@ -1,0 +1,33 @@
+.dispbox {
+    background-color: rgba(248, 248, 240, 0.85);
+    border-radius: 1px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 14px;
+    margin-right: 14px;
+    margin-left: 14px;
+    margin-top: 14px;
+}
+
+html,
+body {
+  color: #555;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+.invis {
+    background-color: rgba(1, 1, 1, 0.0);
+    box-shadow: inset 0px -1px 1px 0px rgba(13, 13, 10, 0.35);
+}
+
+.navbar {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background-color: rgba(230, 230, 225, 0.5)
+}
+
+
+.nseethru {
+    background-color: rgba(107, 107, 71, 0.45);
+}

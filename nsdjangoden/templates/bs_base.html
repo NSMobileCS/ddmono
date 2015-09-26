@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,13 +12,18 @@
     <meta name="Nathan R Smith" content="">
 
 
-    <title>NS Django Den</title>
+    <title>
+        NS Django Den
+        <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>
+        <span class="glyphicon glyphicon-knight" aria-hidden="true"></span>2
+    </title>
 
     <!-- Bootstrap core CSS -->
     <link href="/static/nsdjangoden/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="/static/nsdjangoden/bootstrap/jumbotron.css" rel="stylesheet">
+    <!--<link href="/static/nsdjangoden/bootstrap/jumbotron.css" rel="stylesheet">-->
+    <link href="/static/nsdjangoden/bootstrap/custom.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -28,15 +36,61 @@
 
 <div class="container">
 
-    <div class="header clearfix">
-        <nav>
-            <ul class="nav nav-pills pull-right">
-                <li role="presentation" class='active'><a href="/">Demos</a></li>
-                <li role="presentation" class='active'><a href="/about/">About me</a></li>
-            </ul>
-        </nav>
-        <h3 class="text-muted">NS Django Den</h3>
+<nav class="navbar navbar-default invis">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="ns-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">NS Django Den</a>
     </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="ns-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li> <a href="/about/">about me</a></li>
+          <li><a href="/">demo apps</a></li>
+        <!--<li class="dropdown">-->
+          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Demo Apps<span class="caret"></span></a>-->
+          <!--<ul class="dropdown-menu">-->
+            <!--<li role="separator" class="divider"></li>-->
+            <!--<li><a href="/firstladyswap/">1st-Lady-Swap Game</a></li>-->
+            <!--<li role="separator" class="divider"></li>-->
+            <!--<li><a href="/postrecipes/">Post Recipes App</a></li>-->
+          <!--</ul>-->
+        <!--</li>-->
+      </ul>
+      <!--<ul class="nav navbar-nav navbar-right">-->
+        <!--<li><a href="#">Link</a></li>-->
+        <!--<li class="dropdown">-->
+          <!--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>-->
+          <!--<ul class="dropdown-menu">-->
+            <!--<li><a href="#">Action</a></li>-->
+            <!--<li><a href="#">Another action</a></li>-->
+            <!--<li><a href="#">Something else here</a></li>-->
+            <!--<li role="separator" class="divider"></li>-->
+            <!--<li><a href="#">Separated link</a></li>-->
+          <!--</ul>-->
+        <!--</li>-->
+      <!--</ul>-->
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+    <!--<div class="header clearfix">-->
+        <!--<nav>-->
+            <!--<ul class="nav nav-tabs pull-right nseethru">-->
+                <!--<li role="presentation"><a href="/">Demos</a></li>-->
+                <!--<li role="presentation"><a href="/about/">About me</a></li>-->
+            <!--</ul>-->
+        <!--</nav>-->
+        <!--<h2 class="text-muted">NS Django Den</h2>-->
+    <!--</div>-->
 
     {% block content %}
     {% endblock %}
@@ -51,5 +105,8 @@
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="/static/nsdjangoden/bootstrap/js/ie10-viewport-bug-workaround.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="/static/nsdjangoden/bootstrap/jquery.backstretch.min.js"></script>
+<script src="/static/nsdjangoden/bootstrap/custom.js"></script>
 </body>
 </html>

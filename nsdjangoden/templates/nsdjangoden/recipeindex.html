@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="jumbotron">
+<div class="dispbox">
     <h1>Recipes</h1>
     <p class="lead">Browse uploaded recipes below, or upload a new one now</p>
 
@@ -18,7 +18,7 @@
         <br>
         <input type="text" name="instructions" value="">
         <br><br>
-        <input type="submit" class="btn btn-lg btn-success" value="Share new recipe">
+        <input type="submit" class="btn btn-lg btn-primary" value="Share new recipe">
     </form>
 
 </div>
@@ -26,7 +26,7 @@
 <div class="row marketing">
 
     {% for recipe in recipes %}
-    <div class="col-lg-4">
+    <div class="dispbox col-xs-6 col-lg-4">
         <p><h3><a href="/postrecipes/{{ recipe.urltitle }}/">{{ recipe.title }}</a></h3></p>
     </div>
     {% endfor %}

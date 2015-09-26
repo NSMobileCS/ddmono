@@ -1,0 +1,1 @@
+$.backstretch("/static/nsdjangoden/bootstrap/bg1.2.jpg");

@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="jumbotron">
+<div class="dispbox">
     <h1>Results: {{ pres.pres_name }}</h1>
     <p class="lead">
         In real life, {{ pres.pres_name }} had {{ pres.realfirstlady }} as his First Lady <br>
@@ -13,15 +13,15 @@
     </p>
 
     {% if prev_pres %}
-    <a class="btn btn-lg btn-success" href="/firstladyswap/results/{{ prev_pres.id }}/" role="button">
+    <a class="btn btn-lg btn-primary" href="/firstladyswap/results/{{ prev_pres.id }}/" role="button">
         <-- {{ prev_pres.pres_name }}
     </a>
     {% endif %}
-    <a class="btn btn-lg btn-success" href="/firstladyswap/results/" role="button">
+    <a class="btn btn-lg btn-primary" href="/firstladyswap/results/" role="button">
         Back
     </a>
     {% if next_pres %}
-    <a class="btn btn-lg btn-success" href="/firstladyswap/results/{{ next_pres.id }}/" role="button">
+    <a class="btn btn-lg btn-primary" href="/firstladyswap/results/{{ next_pres.id }}/" role="button">
         {{ next_pres.pres_name }} -->
     </a>
     {% endif %}
@@ -29,7 +29,7 @@
 
 <div class="row marketing">
     {% for lady in first_lady_list %}
-    <div class="col-lg-6">
+    <div class="dispbox col-xs-10 col-md-6">
         <h4>{{ lady.lady_name }}</h4>
         <p>{{ lady.lady_name }} has recieved {{ lady.votes }} votes to be First Lady with {{ pres.pres_name }}!
         </p>
@@ -41,17 +41,17 @@
 
 <br><br>
 
-<div class="jumbotron">
+<div class="dispbox">
     {% if prev_pres %}
-    <a class="btn btn-lg btn-success" href="/firstladyswap/results/{{ prev_pres.id }}/" role="button">
+    <a class="btn btn-lg btn-primary" href="/firstladyswap/results/{{ prev_pres.id }}/" role="button">
         <-- {{ prev_pres.pres_name }}
     </a>
     {% endif %}
-    <a class="btn btn-lg btn-success" href="/firstladyswap/results/" role="button">
+    <a class="btn btn-lg btn-primary" href="/firstladyswap/results/" role="button">
         Back
     </a>
     {% if next_pres %}
-    <a class="btn btn-lg btn-success" href="/firstladyswap/results/{{ next_pres.id }}/" role="button">
+    <a class="btn btn-lg btn-primary" href="/firstladyswap/results/{{ next_pres.id }}/" role="button">
         {{ next_pres.pres_name }} -->
     </a>
     {% endif %}

@@ -2,17 +2,17 @@
 
 {% block content %}
 
-    <div class="jumbotron">
+    <div class="dispbox">
         <h1>Results</h1>
         <p class="lead">Click a President below to see their most popular First Lady Matchups!<br><br>and if you already want to again, you can:</p>
 
-        <p><a class="btn btn-lg btn-success" href="/firstladyswap/1/voting/" role="button">Play Survey Again</a></p>
+        <p><a class="btn btn-lg btn-primary" href="/firstladyswap/1/voting/" role="button">Play Survey Again</a></p>
     </div>
 
     <div class="row marketing">
 
     {% for pres in pres_list %}
-    <div class="col-lg-6">
+    <div class="dispbox col-xs-10 col-md-6 col-lg-4">
         <h4>
             <a href="/firstladyswap/results/{{ pres.id }}/">
                 <img src="/static/nsdjangoden/img/{{ pres.presimg }}" alt="{{ pres.pres_name }} thumbnail" height=60>
@@ -22,12 +22,12 @@
         <p>
             In real life, President {{ pres.pres_name }} was married to First Lady {{ pres.realfirstlady }}
         </p>
-        <a class="btn btn-lg btn-success" href="/firstladyswap/results/{{ pres.id }}/" role="button" >View Results</a>
+        <a class="btn btn-lg btn-primary" href="/firstladyswap/results/{{ pres.id }}/" role="button" >View Results</a>
     </div>
     {% endfor %}
 
 
-      </div>
+    </div>
 {% endblock %}
 
 
