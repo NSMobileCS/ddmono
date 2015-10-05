@@ -2,17 +2,17 @@
 
 {% block content %}
 
-    <div class="dispbox">
+    <div class="maindisp">
         <h1>Results</h1>
         <p class="lead">Click a President below to see their most popular First Lady Matchups!<br><br>and if you already want to again, you can:</p>
 
         <p><a class="btn btn-lg btn-primary" href="/firstladyswap/1/voting/" role="button">Play Survey Again</a></p>
     </div>
 
-    <div class="row marketing">
+    <div class="row marketing maindisp">
 
     {% for pres in pres_list %}
-    <div class="dispbox col-xs-10 col-md-6 col-lg-4">
+    <div class="dispbox col-md-5">
         <h4>
             <a href="/firstladyswap/results/{{ pres.id }}/">
                 <img src="/static/nsdjangoden/img/{{ pres.presimg }}" alt="{{ pres.pres_name }} thumbnail" height=60>

@@ -44,15 +44,6 @@ def vote(request, pres_id):
 
 
 
-def detail(request, pres_id):
-    pres = get_object_or_404(President, id=pres_id)
-    context = {'pres_name':pres.pres_name,
-               'presimg':pres.presimg,
-               'realfirstlady':pres.realfirstlady,
-               }
-    return render(request, 'nsdjangoden/detail.html', context)
-
-
 def all_results(request):
     pres_list = [i for i in President.objects.all()]
     context = {'pres_list':pres_list,

@@ -7,7 +7,7 @@ class President(models.Model):
 
     def __str__(self):
         return str(self.pres_name)
-
+1
 
 class FirstLady(models.Model):
     president = models.ForeignKey(President)
