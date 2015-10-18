@@ -754,7 +754,8 @@ if (typeof jQuery === 'undefined') {
 +function ($) {
   'use strict';
 
-  // DROPDOWN CLASS DEFINITION
+  // DROPDOWN CLASS DE
+  FINITION
   // =========================
 
   var backdrop = '.dropdown-backdrop'
